@@ -31,7 +31,13 @@
            </ul>
           </div>
       </nav>
-
+      <% if notice.present? %>
+        <p class="notice alert-info"><%= notice %></p>
+      <% end %>
+      <% if notice.present? %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+      
     <%= yield %>
   </body>
 </html>
