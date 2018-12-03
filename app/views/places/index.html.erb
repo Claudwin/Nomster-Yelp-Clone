@@ -7,6 +7,9 @@
                 <h1><%= place.name %></h1>
                     <i><%= place.address %></i><br /><br />
                     <i><%= place.description %></i>
+                    <% if place.user.present? %>
+                        <small><%= place.user.email %></small>
+                    <% end %>
                 </div>
             <% end %>
         </div>
