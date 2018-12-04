@@ -4,7 +4,8 @@
         <div class='row'>
             <% @places.each do |place| %>
                 <div class='col-md-3'>
-                <h1><%= place.name %></h1>
+                <h1><%= link_to place.name, place_path(place) %></h1><br />
+                
                     <i><%= place.address %></i><br /><br />
                     <i><%= place.description %></i>
                     <% if place.user.present? %>

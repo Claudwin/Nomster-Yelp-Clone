@@ -1,0 +1,29 @@
+<section class="reserve-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><%= @place.name %></h3>
+                    <br/>
+                    <p><%= @place.address %></p>
+                    <p class="reserve-description"><%= @place.description %></p>
+                </div>
+                <div class="col-md-6">
+                    <div class="reserve-seat-block">
+                        <div class="reserve-rating">
+                            <span>9.5</span>
+                        </div>
+                        <div class="review-btn">
+                            <a href="#" class="btn btn-outline-danger">WRITE A REVIEW</a>
+                            <span>34 reviews</span>
+                        </div>
+                        <div class="reserve-btn">
+                            <div class="featured-btn-wrap">
+                                <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-danger' %>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

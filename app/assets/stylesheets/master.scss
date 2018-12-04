@@ -28,3 +28,75 @@ body {
 .main-container {
     margin-top: 10px;
 }
+
+.reserve-block {
+    padding: 30px 0;
+    h3 {
+        color: #3e434b;
+        font-weight: 400;
+        display: inline-block;
+        margin: 0;
+    }
+    p {
+        display: inline-block;
+        font-size: 18px;
+        color: #b2b8c3;
+        font-weight: 400;
+        padding: 0 0 0 8px;
+        margin: 0 0 8px;
+        @media (max-width: 992px) {
+            margin: 0;
+        }
+        span {
+            color: #ffb006;
+        }
+    }
+}
+
+.review-btn {
+    display: inline-block;
+    text-align: center;
+    margin: 3px 14px 0 14px;
+    @media (max-width: 1200px) {
+        margin: 3px 4px 0 4px;
+    }
+    @media (max-width: 576px) {
+        margin: 3px 0px 0 0px;
+    }
+    span {
+        display: block;
+        color: #8a8e96;
+        font-size: 13px;
+        margin-top: 3px;
+    }
+    .btn-outline-danger {
+        color: #ff3a6d;
+        border-color: #ff3a6d;
+        &:hover {
+            color: #fff;
+            background: #ff3a6d;
+        }
+    }
+}
+
+.reserve-rating {
+    font-size: 23px;
+    background: #46cd38;
+    padding: 10px 14px;
+    color: #fff;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.reserve-btn {
+    display: inline-block;
+    vertical-align: top;
+    @media (max-width: 768px) {
+        margin: -7px 0 0;
+    }
+    @media (max-width: 576px) {
+        margin: 0 0 0;
+        width: 100%;
+    }
+}
