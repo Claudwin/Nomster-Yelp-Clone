@@ -39,9 +39,10 @@
 	</div> <!-- form-group end.// -->  
     <div class="col form-group">
     <div class="form-actions">
-           <%= f.button :submit, "Log in", class: 'btn btn-primary' %>                                      
-
-    </div> <!-- form-group// -->      
+                                                
+            <%= f.button :submit, "Log in", class: 'btn btn-primary' %>
+    </div> <!-- form-group// -->   
+    <% end %>  
 </form>
 </article> <!-- card-body end .// -->
 <div class="border-top card-body text-center">Don't have an account? <%= render "devise/shared/links" %></div>
@@ -51,7 +52,7 @@
 
 </div> <!-- row.//-->
 
-<% end %>
+
 </div> 
 <!--container end.//-->
 
