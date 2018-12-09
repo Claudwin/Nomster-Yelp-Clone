@@ -106,3 +106,78 @@ body {
   border-radius: 3px;
   padding: 2px 8px 2px 8px;
 }
+
+.map-container-5{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.map-container-5 iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+
+
+
+// Contact Info
+.contact-info {
+    background: #fff;
+    padding: 0 0 6px;
+    margin: 0 0 15px;
+    #map {
+        width: 100%;
+    }
+    label {
+        color: #46cd38;
+        font-size: 14px;
+        padding: 0 0 0 50px;
+        @media (max-width: 992px) {
+            display: block;
+        }
+    }
+}
+
+.address {
+    color: #737882;
+    padding: 18px 0 0 16px;
+    >span {
+        font-size: 18px;
+        float: left;
+        margin: 4px 0 0;
+    }
+    p {
+        margin: 0 0 0 34px;
+    }
+    .featured-open {
+        font-size: 13px;
+        padding: 0 0 0 34px;
+    }
+}
+
+.btn-contact {
+    display: block;
+    padding: 16px;
+    margin: 12px 16px;
+    border: 2px solid #ff3a6d;
+    color: #ff3a6d;
+    font-weight: 400;
+    &:hover {
+        background: #ff3a6d;
+        border: 2px solid #ff3a6d;
+    }
+}
+
+
+
+
+
+
+
+#map {
+    height: 200px;
+    
+}

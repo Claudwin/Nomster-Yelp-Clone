@@ -1,10 +1,34 @@
+   <link rel="shortcut icon" href="https://colorlib.com/wp-content/uploads/2017/11/11">
+    <script>
+
+            function initMap() {
+            var myLatLng = {lat: <%= @place.latitude%>, lng: <%= @place.longitude %>};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: myLatLng
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });
+            }
+        </script>
+
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAk3CRKmTP3yRD0IB-3SVtObDz_MwXTB8A&callback=initMap">
+        </script>
+
+
 <section class="reserve-block">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <h3><%= @place.name %></h3>
                     <br/>
-                    <p><%= @place.address %></p>
+                    
                     <p class="reserve-description"><%= @place.description %></p>
                 </div>
                 <div class="col-md-6">
@@ -28,6 +52,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4 responsive-wrap">
+                    <div class="contact-info">
+                     <% if @place.latitude.present? && @place.longitude.present? %>
+         <div id="map"></div>
+         <% end %>
+                        <div class="address">
+                            <%= favicon_link_tag asset_path('pin.png') %>
+                            <p><%= @place.address %></p>
+                        </div>
+                        <div class="address">
+                            <span class="icon-screen-smartphone"></span>
+                            <p> <%= @place.phone_number %></p>
+                        </div>
+                        <div class="address">
+                            <span class="icon-link"></span>
+                           <a href="<%= @place.website %>"> <p><%= @place.website %></p></a>
+                        </div>
+                        <div class="address">
+                            <span class="icon-clock"></span>
+                            <p><%= @place.hours %> <br>
+                </div>
             </div>
         </div>
-    </section>
+    </section>  
+    
