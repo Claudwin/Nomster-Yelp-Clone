@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome-sprockets";
 @import "font-awesome";
 
 
@@ -40,7 +41,7 @@ body {
     p {
         display: inline-block;
         font-size: 18px;
-        color: #b2b8c3;
+        color: #8a8e96;
         font-weight: 400;
         padding: 0 0 0 8px;
         margin: 0 0 8px;
@@ -128,17 +129,7 @@ position:absolute;
     background: #fff;
     padding: 0 0 6px;
     margin: 0 0 15px;
-    #map {
-        width: 100%;
-    }
-    label {
-        color: #46cd38;
-        font-size: 14px;
-        padding: 0 0 0 50px;
-        @media (max-width: 992px) {
-            display: block;
-        }
-    }
+     
 }
 
 .address {
@@ -152,30 +143,7 @@ position:absolute;
     p {
         margin: 0 0 0 34px;
     }
-    .featured-open {
-        font-size: 13px;
-        padding: 0 0 0 34px;
-    }
-}
-
-.btn-contact {
-    display: block;
-    padding: 16px;
-    margin: 12px 16px;
-    border: 2px solid #ff3a6d;
-    color: #ff3a6d;
-    font-weight: 400;
-    &:hover {
-        background: #ff3a6d;
-        border: 2px solid #ff3a6d;
-    }
-}
-
-
-
-
-
-
+ }
 
 #map {
     height: 200px;

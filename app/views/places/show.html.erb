@@ -1,11 +1,12 @@
    <link rel="shortcut icon" href="https://colorlib.com/wp-content/uploads/2017/11/11">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <script>
 
             function initMap() {
             var myLatLng = {lat: <%= @place.latitude%>, lng: <%= @place.longitude %>};
 
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
+                zoom: 12,
                 center: myLatLng
             });
 
@@ -55,23 +56,23 @@
                 <div class="col-md-4 responsive-wrap">
                     <div class="contact-info">
                      <% if @place.latitude.present? && @place.longitude.present? %>
-         <div id="map"></div>
-         <% end %>
-                        <div class="address">
-                            <%= favicon_link_tag asset_path('pin.png') %>
-                            <p><%= @place.address %></p>
+                        <div id="map"></div>
+                            <div class="address">
+                            <span class="fas fa-map-marker-alt"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= @place.address %>
                         </div>
                         <div class="address">
+                            <i class="fas fa-mobile"></i>
                             <span class="icon-screen-smartphone"></span>
                             <p> <%= @place.phone_number %></p>
                         </div>
                         <div class="address">
-                            <span class="icon-link"></span>
-                           <a href="<%= @place.website %>"> <p><%= @place.website %></p></a>
+                            <i class="fas fa-link"></i>
+                            <a href="<%= @place.website %>"> <p><%= @place.website %></p></a>
                         </div>
                         <div class="address">
-                            <span class="icon-clock"></span>
+                            <i class="far fa-clock"></i>
                             <p><%= @place.hours %> <br>
+                             <% end %>
                 </div>
             </div>
         </div>

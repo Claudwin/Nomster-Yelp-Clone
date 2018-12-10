@@ -1,57 +1,64 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-
-
 <div class="container">
+    <hr>
+        <div class="col row justify-content-center">
+        <div class="col-md-6">
+        <div class="card">
+            <header class="card-header">
+                <%= simple_form_for @place do |f| %>
+                <h4 class="card-title mt-2">Edit Your Place</h4>
+            </header>
+            <article class="card-body">
+        <form>
+            <div class="form-row">
+            <div class="col form-group">
+            </div>
+            </div> <!-- form-row.// -->
+                <div class="form-row">
+                    <div class="col form-group">
+                        <%= f.input :name %>
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row end.// -->
+                <div class="form-row">
+                </div> <!-- form-row.// -->
+                    <div class="col form-group">
+                        <%= f.input :address %>
+                    </div> <!-- form-group end.// -->  
+                <div class="form-row">
+                </div> <!-- form-row.// -->
+               <div class="col form-group">
+                     <%= f.input :description %>
+            </div> <!-- form-group end.// --> 
+            <div class="form-row">
+                    <div class="col form-group">
+                        <%= f.input :phone_number %>
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row end.// -->
+                <div class="form-row">
+                    <div class="col form-group">
+                        <%= f.input :website %>
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row end.// -->
+                <div class="form-row">
+                    <div class="col form-group">
+                        <%= f.input :hours %>
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row end.// -->
+            <%= f.submit 'Update', class: 'btn btn-primary' %>
+            <% end %>
+                </div> <!-- form-group// -->      
+        </form>
+        </article> <!-- card-body end .// -->
 
-<hr>
+
+        </div> <!-- card.// -->
+        </div> <!-- col.//-->
+
+        </div> <!-- row.//-->
 
 
-<div class="col row justify-content-center">
-<div class="col-md-6">
-<div class="card">
-<header class="card-header">
-<%= simple_form_for @place do |f| %>
-  <h4 class="card-title mt-2">Edit Your Place</h4>
-</header>
-<article class="card-body">
-<form>
-<div class="form-row">
-<div class="col form-group">
-</div>
-	</div> <!-- form-row.// -->
-	<div class="form-row">
-	<div class="col form-group">
-		<%= f.input :name %>
-	</div> <!-- form-group end.// -->
-	</div> <!-- form-row end.// -->
-	
-  <div class="form-row">
-	</div> <!-- form-row.// -->
-	<div class="col form-group">
-		<%= f.input :address %>
-	   	</div> <!-- form-group end.// -->  
-      <div class="form-row">
-	</div> <!-- form-row.// -->
-	
-
-    <div class="col form-group">
-                                             
-<%= f.input :description %>
- <%= f.submit 'Update', class: 'btn btn-primary' %>
-  <% end %>
-    </div> <!-- form-group// -->      
-</form>
-</article> <!-- card-body end .// -->
-
-
-</div> <!-- card.// -->
-</div> <!-- col.//-->
-
-</div> <!-- row.//-->
-
-
-</div> 
-<!--container end.//-->
+    </div> 
+    <!--container end.//-->
 
 <br><br>
 
