@@ -110,7 +110,10 @@
                         <div class="clear"></div>
                             <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
                             <%= f.input :comment %>
-                            <%= f.input :rating %>
+                            <span>Rating</span>
+                            <%= f.select :rating, ((0..10).map ) %>
+                            <br/>
+                            <br/>
                             <%= f.submit "Add a Review", class: 'btn btn-primary' %>
                         <% end %>
                     </div>
