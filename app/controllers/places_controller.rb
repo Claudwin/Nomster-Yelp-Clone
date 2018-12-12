@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
 
     def index
         @places = Place.all
+        @comments_all = Comment.all 
     end
 
     def new

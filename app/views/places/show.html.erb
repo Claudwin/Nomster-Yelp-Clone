@@ -34,12 +34,16 @@
                 </div>
                 <div class="col-md-6">
                     <div class="reserve-seat-block">
+                    <% if @place.comments.present? %>
                         <div class="reserve-rating">
-                            <span>9.5</span>
+                        
+                            <span><%= @place.comments.average(:rating) %></span>
+                            
                         </div>
+                        <% end %>
                         <div class="review-btn">
                             <a href="#" class="btn btn-outline-danger">WRITE A REVIEW</a>
-                            <span>34 reviews</span>
+                            <span><%= @place.comments.count %> reviews</span>
                         </div>
                         <div class="reserve-btn">
                             <div class="featured-btn-wrap">
@@ -53,14 +57,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 responsive-wrap">
-                    <div class="contact-info">
-                     <% if @place.latitude.present? && @place.longitude.present? %>
+              
+            </div>
+                <br/>
+           <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                   <% if @place.latitude.present? && @place.longitude.present? %>
                         <div id="map"></div>
-                            <div class="address">
+                        <%end%>
+                           <div class="address">
                             <span class="fas fa-map-marker-alt"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= @place.address %>
                         </div>
-                        <div class="address">
+                     <div class="address">
                             <i class="fas fa-mobile"></i>
                             <span class="icon-screen-smartphone"></span>
                             <p> <%= @place.phone_number %></p>
@@ -72,15 +81,40 @@
                         <div class="address">
                             <i class="far fa-clock"></i>
                             <p><%= @place.hours %> <br>
-                             <% end %>
+                            
+                             </div>
+                    
                 </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-<%= simple_form_for @comment, url: '#' do |f| %>
-  <%= f.input :comment %>
-  <%= f.input :rating %>
-  <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
-<% end %>
+                <div class="col-md-6">
+                <% if @place.comments.present? %>
+                     <h3>Reviews</h3>
+                        <br/>
+                             <% @place.comments.each do |comment| %>
+                                <div>
+                                    <blockquote>
+                                        <div class="reserve-rating"><%= comment.rating %> 
+                                        </div> &nbsp; &nbsp; &nbsp;
+                                    <%= comment.comment %>
+                                    <br/>
+                                    <small>Review by:&nbsp; <%= comment.user.email %></small>
+                                    </blockquote>
+                                </div>
+                            <% end %>
+                         <% end %>
+                    </div>
+                </div> 
+                <br/>
+              <div class="col-md-6 responsive-wrap">
+                 <h5>Leave a Review</h5>
+                     <br/>
+                        <div class="clear"></div>
+                            <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+                            <%= f.input :comment %>
+                            <%= f.input :rating %>
+                            <%= f.submit "Add a Review", class: 'btn btn-primary' %>
+                        <% end %>
+                    </div>
+                </div>
+  
     </section>  
     
