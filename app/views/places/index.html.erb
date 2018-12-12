@@ -1,17 +1,44 @@
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 <div class="container">
-    <% @places.in_groups_of(4, false).each do |group| %>
+
+    <% @places.in_groups_of(3, false).each do |group| %>
         <div class='row'>
             <% @places.each do |place| %>
-                <div class='col-md-3'>
-                <h1><%= link_to place.name, place_path(place) %></h1><br />
-                
-                    <i><%= place.address %></i><br /><br />
-                    <i><%= place.description %></i>
-                    <% if place.user.present? %>
-                        <small><%= place.user.email %></small>
-                    <% end %>
+                <div class='col-md-4'>
+                <div class="featured-place-wrap">
+                <h4><%= link_to place.name, place_path(place) %></h4><br />
+                <% if place.comments.present? %>
+                <div class="reserve-rating">
+                <span><%= place.comments.average(:rating) %></span>
                 </div>
+                <% end %>
+                 <span><%= place.comments.count %> reviews</span>
+                <div class="address">
+                            <span class="fas fa-map-marker-alt"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= place.address %>
+                        </div>
+                     <div class="address">
+                            <i class="fas fa-mobile"></i>
+                            <span class="icon-screen-smartphone"></span>
+                            <p> <%= place.phone_number %></p>
+                        </div>
+                        <div class="address">
+                            <i class="fas fa-link"></i>
+                            <a href="<%= place.website %>"> <p><%= place.website %></p></a>
+                        </div>
+                        <div class="address">
+                            <i class="far fa-clock"></i>
+                            <p><%= place.hours %> <br>
+                            
+                             </div>
+                       
+                    <% if place.user.present? %>
+                     <small><%= place.user.email %></small>
+                         
+                         
+                    <% end %>
+                    </div>
+                </div>
+                
             <% end %>
         </div>
     <% end%>

@@ -2,7 +2,9 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-
+h4{
+    	font-weight: 600;
+	}
 
 body {
     font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
@@ -148,4 +150,23 @@ position:absolute;
 #map {
     height: 200px;
     
+}
+
+.featured-place-wrap {
+    background: #fff;
+    margin: 0 0 30px;
+    transition: all 0.5s ease;
+    position: relative;
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 3px 40px 0 rgba(206, 205, 205, 0.3);
+    }
+    a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+    }
+    img {
+        width: 100%;
+    }
 }
