@@ -22,6 +22,34 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAk3CRKmTP3yRD0IB-3SVtObDz_MwXTB8A&callback=initMap">
         </script>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Leave a Review</h4>
+      </div>
+      <div class="modal-body">
+         <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+                                <%= f.input :comment %>
+                                <span>Rating</span>
+                                <%= f.select :rating, ((0..10).map ) %>
+                                <br/>
+                                <br/>
+                            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Post Review", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <section class="reserve-block">
         <div class="container">
@@ -42,7 +70,7 @@
                         </div>
                         <% end %>
                         <div class="review-btn">
-                            <a href="#" class="btn btn-outline-danger">WRITE A REVIEW</a>
+                          <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal">WRITE A REVIEW</a>
                             <span><%= @place.comments.count %> reviews</span>
                         </div>
                         <div class="reserve-btn">
@@ -104,20 +132,6 @@
                     </div>
                 </div> 
                 <br/>
-              <div class="col-md-6 responsive-wrap">
-                 <h5>Leave a Review</h5>
-                     <br/>
-                        <div class="clear"></div>
-                            <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
-                            <%= f.input :comment %>
-                            <span>Rating</span>
-                            <%= f.select :rating, ((0..10).map ) %>
-                            <br/>
-                            <br/>
-                            <%= f.submit "Add a Review", class: 'btn btn-primary' %>
-                        <% end %>
-                    </div>
-                </div>
-  
+             
     </section>  
     
