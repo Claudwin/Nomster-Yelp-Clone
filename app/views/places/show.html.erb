@@ -109,9 +109,10 @@
                         <div class="address">
                             <i class="far fa-clock"></i>
                             <p><%= @place.hours %> <br>
-                            
-                             </div>
-                    
+                        </div>
+                        <div class="featured-btn-wrap">
+                        <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
+                    </div>
                 </div>
                 <div class="col-md-6">
                 <% if @place.comments.present? %>
@@ -129,7 +130,15 @@
                                 </div>
                             <% end %>
                          <% end %>
-                    </div>
+          <%= simple_form_for @picture, url: place_pictures_path(@place) do |f| %>
+                                <%= f.input :picture %>
+                                <%= f.input :caption %>
+                                <%= f.submit "Post Photo", class: 'btn btn-primary' %>
+                                <br/>
+                                <br/>
+                            
+      </div>
+      <% end %>
                 </div> 
                 <br/>
              
