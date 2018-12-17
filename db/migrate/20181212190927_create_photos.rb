@@ -6,6 +6,5 @@ class CreatePhotos < ActiveRecord::Migration[5.2]
       t.integer :place_id
       t.timestamps
     end
-    
   end
 end
