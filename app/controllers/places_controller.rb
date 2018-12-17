@@ -3,7 +3,6 @@ class PlacesController < ApplicationController
 
     def index
         @places = Place.all
-        @comments_all = Comment.all 
     end
 
     def new
@@ -22,7 +21,7 @@ class PlacesController < ApplicationController
     def show
         @place = Place.find(params[:id])
         @comment = Comment.new
-        @picture = Photo.new
+        @photo = Photo.new
     end
    
     def edit 
