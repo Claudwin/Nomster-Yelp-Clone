@@ -130,6 +130,17 @@
                             <% end %>
                          <% end %>
                     </div>
+                       <%= simple_form_for @photo, url: "#" do |f| %>
+                                <%= f.input :caption %>
+                                <%= f.input :picture %>
+                                <br/>
+                                <br/>
+                            
+      </div>
+      
+        
+       <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+        <% end %>
                 </div> 
                 <br/>
              
