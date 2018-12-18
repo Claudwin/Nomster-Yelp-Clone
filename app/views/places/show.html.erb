@@ -113,6 +113,16 @@
                              </div>
                     
                 </div>
+                <div class="col-md-8">
+                <!-----------------Photos Show Section---------------->
+                <div class="col-md-6">
+                 <h3>Pictures</h3>
+                    <% @place.photos.each do |photo|%>
+                        <%= photo.picture %>
+                        <%= photo.caption %>
+                    <% end %>
+                </div>
+                <!-----------------Comments Show Section---------------->
                 <div class="col-md-6">
                 <% if @place.comments.present? %>
                      <h3>Reviews</h3>
@@ -129,6 +139,7 @@
                                 </div>
                             <% end %>
                          <% end %>
+                    </div>
                     </div>
                        <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
                                 <%= f.input :caption %>
