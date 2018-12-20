@@ -50,7 +50,33 @@
   </div>
 </div>
                         <!----- Comment Modal End ----->
-                       <!----- Shpw Page Markup -----> 
+                        <!----- Photo Modal ----->
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Add Photo</h4>
+      </div>
+      <div class="modal-body">
+         <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+            <%= f.input :caption %>
+            <%= f.input :picture %>
+            <br/>
+            <br/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+                        <!----- Photo Modal End ----->
+                       <!----- Show Page Markup -----> 
 <section class="reserve-block">
         <div class="container">
             <div class="row">
@@ -110,14 +136,14 @@
                 <!-----------------Photos Show Section---------------->
                 <div class="col-md-6">
                  <h3>Pictures</h3>  <div class="review-btn"> 
-                    <a href="#" class="" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"></i> Add Photo</a>
+                    <a href="#" class="" data-toggle="modal" data-target="#photoModal"><i class="fa fa-plus-circle"></i> Add Photo</a>
                    </div><br/>
                     <% @place.photos.each do |photo|%>
                         <%= image_tag photo.picture.url %>
                         <%= photo.caption %>
                     <% end %>
                 </div>
-                <!----------------- Reviews & Photos Show Section---------------->
+                <!----------------- Reviews Show Section---------------->
                 <div class="col-md-6">
                     <% if @place.comments.present? %>
                      <h3>Reviews</h3>
@@ -134,19 +160,7 @@
                     <% end %>
                 </div>
             </div>
-                <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-                                <%= f.input :caption %>
-                                <%= f.input :picture %>
-                                <br/>
-                                <br/>
-                            
       </div>
-      
-        
-       <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-        <% end %>
-                </div> 
-                <br/>
-             
+  </div> 
 </section>  
     

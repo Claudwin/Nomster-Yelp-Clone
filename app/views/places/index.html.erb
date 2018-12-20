@@ -12,9 +12,11 @@
                                 </div>
                             <% end %>
                                 <span><%= place.comments.count %> review(s)</span>
+                                
                                 <div class="address">
                                     <span class="fas fa-map-marker-alt"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= place.address %>
                                 </div>
+                                
                                 <div class="address">
                                     <span class="fas fa-mobile"></span><p><%= place.phone_number %></p>
                                 </div>
@@ -25,10 +27,10 @@
                                     <span class="far fa-clock"></span><p><%= place.hours %> <br>
                                 </div>
                                 <div class="address">
-                                    <% if place.user.present? %>
-                                    <small><p>Posted by: <%= place.user.email %></small>
-                                    <% end %>
-                                </div>
+                                <% if place.user.present? %>
+                                <small><p>Posted by: <%= place.user.email %></small>
+                            </div>
+                        <% end %>
                     </div><!---Featured End--->
                 </div><!---Col End--->
             <% end %>
