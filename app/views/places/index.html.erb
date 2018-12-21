@@ -12,6 +12,11 @@
                                 </div>
                             <% end %>
                                 <span><%= place.comments.count %> review(s)</span>
+
+                                 <% place.photos.each do |photo|%>
+                                    <%= image_tag photo.picture.url %>
+                                    <%= photo.caption %>
+                                <% end %>
                                 
                                 <div class="address">
                                     <span class="fas fa-map-marker-alt"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= place.address %>
