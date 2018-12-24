@@ -2,20 +2,15 @@
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div class="container">
-
   <hr>
-
-
-  <div class="col row justify-content-center">
-    <div class="col-md-6">
-      <div class="card">
+    <div class="col row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
         <header class="card-header">
-
           <div class="form-inputs">
-            <h4 class="card-title mt-2">Login</h4>
+          <h4 class="card-title mt-2">Login</h4>
         </header>
         <article class="card-body">
-            
               <div class="form-row">
                 <div class="col form-group">
                 </div>
@@ -28,34 +23,21 @@
                   input_html: { autocomplete: "email" } %>
                 </div> <!-- form-group end.// -->
               </div> <!-- form-row end.// -->
-
               <div class="form-row">
-              </div> <!-- form-row.// -->
+                </div> <!-- form-row.// -->
               <div class="col form-group">
-
-                <%= f.input :password,
+                  <%= f.input :password,
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
               </div> <!-- form-group end.// -->
               <div class="col form-group">
-                <div class="form-actions">
-
+              <div class="form-actions">
                   <%= f.button :submit, "Log in", class: 'btn btn-primary' %>
                 </div> <!-- form-group// -->
-
-           
         </article> <!-- card-body end .// -->
-        <div class="border-top card-body text-center">Don't have an account?
-          <%= render "devise/shared/links" %>
+          <div class="border-top card-body text-center">Don't have an account?
+            <%= render "devise/shared/links" %>
         </div>
-
-      </div> <!-- card.// -->
-    </div> <!-- col.//-->
-
-  </div> <!-- row.//-->
-
-
-</div>
-<!--container end.//-->
-<% end %>
+    </div><!--container end.//-->
+  <% end %>
 <br><br>
