@@ -176,3 +176,9 @@ position:absolute;
         width: 100%;
     }
 }
+
+.carousel-inner>.carousel-item>img,
+.carousel-inner>.carousel-item>a>img {
+    height: 550px;
+    width:  auto;
+}

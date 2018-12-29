@@ -33,8 +33,8 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">Leave a Review</h4>
       </div>
+      <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
       <div class="modal-body">
-         <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
             <%= f.input :comment %>
             <span>Rating</span>
             <%= f.select :rating, ((0..10).map ) %>
@@ -156,6 +156,7 @@
                                     <br/>
                                     <small>Review by:&nbsp; <%= comment.user.email %></small>
                                 </div>
+                                <br/>
                             <% end %>
                     <% end %>
                 </div>
