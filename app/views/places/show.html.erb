@@ -139,8 +139,10 @@
                     <a href="#" class="" data-toggle="modal" data-target="#photoModal"><i class="fa fa-plus-circle"></i> Add Photo</a>
                    </div><br/>
                     <% @place.photos.each do |photo|%>
+                        <div class="col-md-4">
                         <%= image_tag photo.picture.url %>
                         <%= photo.caption %>
+                        </div>
                     <% end %>
                 </div>
                 <!----------------- Reviews Show Section---------------->

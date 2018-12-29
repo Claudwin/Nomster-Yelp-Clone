@@ -1,57 +1,82 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-                    <!---Slider Start--->
+<!---Slider Start--->
+<div class="main-index">
 
-<div class="container container-index"><!---Container Start--->
+                    <div class="styled-heading">
+                        <h3>Featured Places</h3>
+                    </div>
+                
+<div class="container container-index">
+    <!---Container Start--->
     <% @places.in_groups_of(3, false).each do |group| %>
-        <div class='row'><!---Row Start--->
-            <% @places.each do |place| %>
-                <div class='col-md-4'><!---Col Start--->
-                    <div class="featured-place-wrap"><!---Featured Start--->
-                    <div class="address">
-                    <% place.photos.each do |photo|%>
-                                    <%= image_tag photo.picture.url %>
-                                    
-                                <% end %>
-                                <br/>
-                                 <div class="reserve-rating">
-                                    <span><%= place.comments.average(:rating) %></span>
-                                </div>
-                                <br/>
-                        <h4><%= link_to place.name, place_path(place) %></h4>
-                            <% if place.comments.present? %>
-                               <%= place.comments.last.comment %>
-                            <% end %>
-                                
-                                <br/>
-                                <span><%= place.comments.count %> review(s)</span>
+    <div class='row'>
+        <!---Row Start--->
+        <% @places.each do |place| %>
+        <div class='col-md-4 '>
+            <!---Col Start--->
+            <div class="featured-place-wrap">
+                <!---Featured Start--->
+                <div class="address">
+                    <% if place.photos.last.present? %>
+                    <%= image_tag place.photos.last.picture.url %>
+                    <% end %>
+                    <br />
+                    <div class="col-md-d">
+                    <div class="reserve-rating">
+                        <span><%= place.comments.average(:rating) %></span>
+                    </div>
+                    <br/>
+                    <span><%= place.comments.count %> review(s)</span>
+                        <h4>
+                            <%= link_to place.name, place_path(place) %>
+                        </h4>
+                    </div>
+                    <% if place.comments.present? %>
+                        <%= place.comments.last.comment %>
+                    <% end %>
+                    
+                    
+                </div>
+               
+                <div class="address">
+                    <span class="fas fa-map-marker-alt"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <%= place.address %>
+                </div>
 
-                                 </div>
-                                <br/>
-                                <div class="address">
-                                    <span class="fas fa-map-marker-alt"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= place.address %>
-                                </div>
-                                
-                                <div class="address">
-                                    <span class="fas fa-mobile"></span><p><%= place.phone_number %></p>
-                                </div>
-                                <div class="address">
-                                    <span class="fas fa-link"></span><a href="<%= place.website %>"> <p><%= place.website %></p></a>
-                                </div>
-                                <div class="address">
-                                    <span class="far fa-clock"></span><p><%= place.hours %> <br>
-                                </div>
-                                <div class="address">
-                                <% if place.user.present? %>
-                                <small><p>Posted by: <%= place.user.email %></small>
-                            </div>
-                        <% end %>
-                    </div><!---Featured End--->
-                </div><!---Col End--->
-            <% end %>
-        </div><!---Row End--->
+                <div class="address">
+                    <span class="fas fa-mobile"></span>
+                    <p>
+                        <%= place.phone_number %>
+                    </p>
+                </div>
+                <div class="address">
+                    <span class="fas fa-link"></span><a href="<%= place.website %>">
+                        <p>
+                            <%= place.website %>
+                        </p>
+                    </a>
+                </div>
+                <div class="address">
+                    <span class="far fa-clock"></span>
+                    <p>
+                        <%= place.hours %> <br>
+                </div>
+                <div class="address">
+                    <% if place.user.present? %>
+                    <small>
+                        <p>Posted by:
+                            <%= place.user.email %>
+                    </small>
+                </div>
+                <% end %>
+            </div>
+            <!---Featured End--->
+        </div>
+        <!---Col End--->
+        <% end %>
+    </div>
+    <!---Row End--->
     <% end%>
-</div><!---Container End--->
-
-
-
-      
+</div>
+<!---Container End--->
+</div>
