@@ -123,8 +123,12 @@ height:100%;
 width:100%;
 position:absolute;
 }
-
-
+body {
+    background-color: #e6e6e6;
+}
+.container-index {
+    margin-top: 10px;
+}
 
 // Contact Info
 .contact-info {
@@ -177,8 +181,4 @@ position:absolute;
     }
 }
 
-.carousel-inner>.carousel-item>img,
-.carousel-inner>.carousel-item>a>img {
-    height: 550px;
-    width:  auto;
-}
+
