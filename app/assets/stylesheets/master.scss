@@ -137,7 +137,10 @@ body {
     position: absolute;
 }
 
-
+.main-index {
+    background-color: #e6e6e6;
+    padding-top: 30px;
+}
 
 // Contact Info
 .contact-info {
@@ -184,7 +187,42 @@ body {
         color: #000;
     }
 
+    h4 :hover {
+        color: #ff3a6d;
+    }
+
+    a :hover {
+        color: #ff3a6d;
+    }
+
     img {
         width: 100%;
     }
 }
+
+.styled-heading {
+    text-align: center;
+    margin: 0 0 50px;
+
+    @media (max-width: 768px) {
+        margin: 0 0 30px;
+    }
+
+    h3 {
+        position: relative;
+        padding: 0 0 23px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 60px;
+            height: 3px;
+            background: #ff3a6d;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.img-show-page {}
