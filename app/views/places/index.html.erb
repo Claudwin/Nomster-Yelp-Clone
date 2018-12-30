@@ -11,10 +11,11 @@
             <% @places.each do |place| %>
                 <div class='col-md-4'><!---Col Start--->
                     <div class="featured-place-wrap"><!---Featured Start--->
-                    <div class="address">
+                    
                         <% if place.photos.last.present? %>
                             <%= image_tag place.photos.last.picture.url %>
                         <% end %>
+                        <div class="address">
                         <br/>
                          <% if place.comments.present? %>
                                 <div class="reserve-rating">
