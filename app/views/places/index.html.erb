@@ -1,33 +1,25 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
-<div class="main-index">
-
-                    <div class="styled-heading">
-                        <h3>Featured Places</h3>
-                    </div>
-        <div class="container"><!---Container Start--->
+<<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<div class="container"><!---Container Start--->
     <% @places.in_groups_of(3, false).each do |group| %>
         <div class='row'><!---Row Start--->
             <% @places.each do |place| %>
                 <div class='col-md-4'><!---Col Start--->
                     <div class="featured-place-wrap"><!---Featured Start--->
-                    
-                        <% if place.photos.last.present? %>
-                            <%= image_tag place.photos.last.picture.url %>
-                        <% end %>
-                        <div class="address">
-                        <br/>
-                         <% if place.comments.present? %>
+                        <h4><%= link_to place.name, place_path(place) %></h4><br />
+                            <% if place.comments.present? %>
                                 <div class="reserve-rating">
                                     <span><%= place.comments.average(:rating) %></span>
-                                </div><br/>
+                                </div>
                             <% end %>
-                            <span><%= place.comments.count %> review(s)</span>
-                            <h4><%= link_to place.name, place_path(place) %></h4>
-                            <% if place.comments.present? %>
-                                <%= place.comments.last.comment %>
-                            <% end %>
-</div>
+                                <span><%= place.comments.count %> review(s)</span>
+
+                                 <% place.photos.each do |photo|%>
+                                    <%= image_tag photo.picture.url %>
+                                    <%= photo.caption %>
+                                <% end %>
+                                
                                 <div class="address">
                                     <span class="fas fa-map-marker-alt"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= place.address %>
                                 </div>
@@ -51,7 +43,4 @@
             <% end %>
         </div><!---Row End--->
     <% end%>
-</div><!---Container End--->        
-
-</div>
-
+</div><!---Container End--->

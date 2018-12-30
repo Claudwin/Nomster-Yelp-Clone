@@ -2,17 +2,17 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-h4{
-    	font-weight: 600;
-	}
+h4 {
+    font-weight: 600;
+}
 
 body {
     font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-  }
+}
 
-.nomster{
-    font-family:'Cookie',cursive;
-    font-size:40pt;
+.nomster {
+    font-family: 'Cookie', cursive;
+    font-size: 40pt;
 }
 
 .navbar {
@@ -20,12 +20,12 @@ body {
 }
 
 .booyah-box {
-  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 1px 1px 2px 0 #d0d0d0;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+    -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+    -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+    box-shadow: 1px 1px 2px 0 #d0d0d0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
 }
 
 .main-container {
@@ -34,12 +34,14 @@ body {
 
 .reserve-block {
     padding: 30px 0;
+
     h3 {
         color: #3e434b;
         font-weight: 400;
         display: inline-block;
         margin: 0;
     }
+
     p {
         display: inline-block;
         font-size: 18px;
@@ -47,9 +49,11 @@ body {
         font-weight: 400;
         padding: 0 0 0 8px;
         margin: 0 0 8px;
+
         @media (max-width: 992px) {
             margin: 0;
         }
+
         span {
             color: #ffb006;
         }
@@ -60,21 +64,26 @@ body {
     display: inline-block;
     text-align: center;
     margin: 3px 14px 0 14px;
+
     @media (max-width: 1200px) {
         margin: 3px 4px 0 4px;
     }
+
     @media (max-width: 576px) {
         margin: 3px 0px 0 0px;
     }
+
     span {
         display: block;
         color: #8a8e96;
         font-size: 13px;
         margin-top: 3px;
     }
+
     .btn-outline-danger {
         color: #ff3a6d;
         border-color: #ff3a6d;
+
         &:hover {
             color: #fff;
             background: #ff3a6d;
@@ -95,118 +104,95 @@ body {
 .reserve-btn {
     display: inline-block;
     vertical-align: top;
+
     @media (max-width: 768px) {
         margin: -7px 0 0;
     }
+
     @media (max-width: 576px) {
         margin: 0 0 0;
         width: 100%;
     }
 }
+
 .invalid-feedback {
-  color: #ff3333;
-  background-color: #FFEEEE;
-  border-radius: 3px;
-  padding: 2px 8px 2px 8px;
+    color: #ff3333;
+    background-color: #FFEEEE;
+    border-radius: 3px;
+    padding: 2px 8px 2px 8px;
 }
 
-.map-container-5{
-overflow:hidden;
-padding-bottom:56.25%;
-position:relative;
-height:0;
+.map-container-5 {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
 }
-.map-container-5 iframe{
-left:0;
-top:0;
-height:100%;
-width:100%;
-position:absolute;
+
+.map-container-5 iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
-.main-index {
-    background-color: #e6e6e6;
-    padding-top: 30px;
-}
+
+
 
 // Contact Info
 .contact-info {
     background: #fff;
     padding: 0 0 6px;
     margin: 0 0 15px;
-     
+
 }
 
 .address {
     color: #737882;
     padding: 18px 0 0 16px;
+
     >span {
         font-size: 18px;
         float: left;
         margin: 4px 0 0;
     }
+
     p {
         margin: 0 0 0 34px;
     }
- }
+}
 
 #map {
     height: 200px;
-    
+
 }
-.featured-place-top {
-    padding: 18px 0 0 16px;
-}
+
 .featured-place-wrap {
     background: #fff;
     margin: 0 0 30px;
     transition: all 0.5s ease;
     position: relative;
+
     &:hover {
         transform: translateY(-2px);
         box-shadow: 0px 3px 40px 0 rgba(206, 205, 205, 0.3);
     }
+
     a {
         display: block;
         text-decoration: none;
         color: #000;
     }
+
     h4 :hover {
         color: #ff3a6d;
     }
+
     a :hover {
         color: #ff3a6d;
     }
+
     img {
         width: 100%;
     }
 }
-
-.styled-heading {
-    text-align: center;
-    margin: 0 0 50px;
-
-    @media (max-width: 768px) {
-        margin: 0 0 30px;
-    }
-
-    h3 {
-        position: relative;
-        padding: 0 0 23px;
-
-        &:after {
-            position: absolute;
-            content: "";
-            width: 60px;
-            height: 3px;
-            background: #ff3a6d;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
-}
-
-.img-show-page {
-
-}
-
