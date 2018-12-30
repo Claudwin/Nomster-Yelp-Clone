@@ -1,83 +1,61 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-<!---Slider Start--->
-<div class="main-index">
+<div class="container">
 
-                    <div class="styled-heading">
-                        <h3>Featured Places</h3>
-                    </div>
-                
-<div class="container container-index">
-    <!---Container Start--->
     <% @places.in_groups_of(3, false).each do |group| %>
     <div class='row'>
-        <!---Row Start--->
         <% @places.each do |place| %>
-        <div class='col-md-4 '>
-            <!---Col Start--->
+        <div class='col-md-4'>
             <div class="featured-place-wrap">
-                <!---Featured Start--->
-                <div class="address">
-                    <% if place.photos.last.present? %>
-                    <%= image_tag place.photos.last.picture.url %>
-                    <% end %>
-                    <br />
-                    <div class="col-md-6">
-                        <div class="reserve-rating">
-                            <span><%= place.comments.average(:rating) %></span>
-                        </div>
-                    
-                    <span><%= place.comments.count %> review(s)</span>
-                    </div>
-                    <br/>
-                    <h4>
-                            <%= link_to place.name, place_path(place) %>
-                        </h4>
-                    <% if place.comments.present? %>
-                        <%= place.comments.last.comment %>
-                    <% end %>
-                    
-                    
+                <% place.photos.each do |photo|%>
+                    <%= image_tag photo.picture.url %>
+                <% end %>
+                <h4>
+                    <%= link_to place.name, place_path(place) %>
+                </h4><br />
+                <% if place.comments.present? %>
+                <div class="reserve-rating">
+                    <span>
+                        <%= place.comments.average(:rating) %></span>
                 </div>
-               
+                <% end %>
+                <span>
+                    <%= place.comments.count %> reviews</span>
                 <div class="address">
                     <span class="fas fa-map-marker-alt"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     <%= place.address %>
                 </div>
-
                 <div class="address">
-                    <span class="fas fa-mobile"></span>
+                    <i class="fas fa-mobile"></i>
+                    <span class="icon-screen-smartphone"></span>
                     <p>
                         <%= place.phone_number %>
                     </p>
                 </div>
                 <div class="address">
-                    <span class="fas fa-link"></span><a href="<%= place.website %>">
+                    <i class="fas fa-link"></i>
+                    <a href="<%= place.website %>">
                         <p>
                             <%= place.website %>
                         </p>
                     </a>
                 </div>
                 <div class="address">
-                    <span class="far fa-clock"></span>
+                    <i class="far fa-clock"></i>
                     <p>
                         <%= place.hours %> <br>
+
                 </div>
-                <div class="address">
-                    <% if place.user.present? %>
-                    <small>
-                        <p>Posted by:
-                            <%= place.user.email %>
-                    </small>
-                </div>
+
+                <% if place.user.present? %>
+                <small>
+                    <%= place.user.email %></small>
+
+
                 <% end %>
             </div>
-            <!---Featured End--->
         </div>
-        <!---Col End--->
+
         <% end %>
     </div>
-    <!---Row End--->
     <% end%>
-</div>
-<!---Container End--->
 </div>
