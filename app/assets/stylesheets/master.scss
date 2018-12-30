@@ -28,6 +28,10 @@ body {
     border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
 }
 
+.main-container {
+    margin-top: 10px;
+}
+
 .reserve-block {
     padding: 30px 0;
 
@@ -178,14 +182,6 @@ body {
         display: block;
         text-decoration: none;
         color: #000;
-    }
-
-    h4 :hover {
-        color: #ff3a6d;
-    }
-
-    a :hover {
-        color: #ff3a6d;
     }
 
     img {
