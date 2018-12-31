@@ -1,4 +1,54 @@
-<h1><%= @user.email %></h1>
-<h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
-<h4><%= @user.comments.count %> total comments</h4>
-<h4><%= @user.comments.count(:rating) %> toal ratings</h4>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<div class="booyah-box">
+
+    <div class="row">
+        <div class="col-4">
+            <%= image_tag 'user.png' %>
+        </div>
+        <div class="col-8">
+            <h1>
+                <%= @user.email %>
+            </h1>
+            <h3>Member Since:
+                <%= @user.created_at.strftime("%B %d, %Y") %>
+            </h3>
+            <h4>
+                <%= @user.comments.count %> total comments</h4>
+            <h4>
+                <%= @user.comments.count(:rating) %> total ratings</h4>
+        </div>
+    </div>
+</div>
+
+<h1 class="text-center">My Comments</h1>
+    <div class="row">
+        <% @user.comments.each do |comment| %>
+            <div class="col-12 col-sm-6">
+            <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
+                <div class="reserve-seat-block text-center">
+                    <div class="reserve-rating">
+                        <%= comment.rating %>
+                    </div> &nbsp; &nbsp; &nbsp;
+                    <div class="comment-text">
+                        <%= comment.comment %>
+                    </div>
+                </div>
+            </div>
+            <br />
+        <% end %>
+    </div>
+
+<div class="clear"></div>
+
+<h2 class="text-center">My Places</h2>
+    <div class="booyah-box col-10 offset-1">
+        <% @user.places.each do |place| %>
+            <h1><%= link_to place.name, place_path(place) %></h1>
+        <div class="address">
+                    <span class="fas fa-map-marker-alt"></span>&nbsp; &nbsp;
+        <i><%= place.address %></i><br />
+        </div>
+        <p><%= place.description %></p><br />
+
+        <% end %>
+    </div>
