@@ -8,10 +8,14 @@
             <div class="featured-place-wrap">
                 <% place.photos.each do |photo|%>
                     <%= image_tag photo.picture.url %>
-                <% end %>
+                <% end %><br/>
                 <h4>
                     <%= link_to place.name, place_path(place) %>
-                </h4><br />
+                </h4>
+                <% if place.comments.present? %>
+                        <span><%= place.comments.last.comment %></span>
+                    <% end %>
+                <br />
                 <% if place.comments.present? %>
                 <div class="reserve-rating">
                     <span>
@@ -19,20 +23,21 @@
                 </div>
                 <% end %>
                 <span>
-                    <%= place.comments.count %> reviews</span>
+                    <%= place.comments.count %> review(s)</span>
+                     
                 <div class="address">
                     <span class="fas fa-map-marker-alt"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     <%= place.address %>
                 </div>
                 <div class="address">
-                    <i class="fas fa-mobile"></i>
+                    <span class="fas fa-mobile"></span>
                     <span class="icon-screen-smartphone"></span>
                     <p>
                         <%= place.phone_number %>
                     </p>
                 </div>
                 <div class="address">
-                    <i class="fas fa-link"></i>
+                    <span class="fas fa-link"></span>
                     <a href="<%= place.website %>">
                         <p>
                             <%= place.website %>
@@ -40,15 +45,14 @@
                     </a>
                 </div>
                 <div class="address">
-                    <i class="far fa-clock"></i>
+                    <span class="far fa-clock"></span>
                     <p>
                         <%= place.hours %> <br>
 
                 </div>
 
                 <% if place.user.present? %>
-                <small>
-                    <%= place.user.email %></small>
+                <small>Posted by: <%= place.user.email %></small>
 
 
                 <% end %>
