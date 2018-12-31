@@ -139,24 +139,27 @@
                     <a href="#" class="" data-toggle="modal" data-target="#photoModal"><i class="fa fa-plus-circle"></i> Add Photo</a>
                    </div><br/>
                     <% @place.photos.each do |photo|%>
-                        <div class="col-md-4">
+                        <div class="booyah-box">
                         <%= image_tag photo.picture.url %>
                         <%= photo.caption %>
                         </div>
                     <% end %>
                 </div>
                 <!----------------- Reviews Show Section---------------->
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <% if @place.comments.present? %>
                      <h3>Reviews</h3>
                         <br/>
                             <% @place.comments.each do |comment| %>
-                                <div>
+                                <div class="booyah-box">
+                                <div class="reserve-seat-block">
                                     <div class="reserve-rating"><%= comment.rating %> 
                                         </div> &nbsp; &nbsp; &nbsp;
+                                    <div class="d-inline">
                                     <%= comment.comment %>
-                                    <br/>
-                                    <small>Review by:&nbsp; <%= comment.user.email %></small>
+                                    </div><br/>
+                                    <small>Reviewed by:&nbsp; <%= comment.user.email %></small>
+                                    </div>
                                 </div>
                                 <br/>
                             <% end %>
