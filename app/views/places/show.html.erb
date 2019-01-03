@@ -134,19 +134,21 @@
                             <!----- Content Section -----> 
                 <div class="col-md-8">
                 <!-----------------Photos Show Section---------------->
-                <div class="col-md-6">
+                <div class="col-md-12">
                  <h3>Pictures</h3>  <div class="review-btn"> 
                     <a href="#" class="" data-toggle="modal" data-target="#photoModal"><i class="fa fa-plus-circle"></i> Add Photo</a>
                    </div><br/>
-                   <div class="row">
-                        <% @place.photos.each do |photo|%>
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <%= image_tag photo.picture.url %>
-                                 <p class="card-text"><%= photo.caption %></p>
+                    <div class="row hidden-md-up">
+                        <div class='col-md-4'>
+                            <% @place.photos.each do |photo|%>
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <%= image_tag photo.picture.url, class: "img-thumbnail"  %>
+                                    <p class="card-text"><%= photo.caption %></p>
+                                </div>
                             </div>
-                        </div>
-                        <% end %>
+                            <% end %>
+                        </div>    
                     </div>
                 </div>    
                 <!----------------- Reviews Show Section---------------->
