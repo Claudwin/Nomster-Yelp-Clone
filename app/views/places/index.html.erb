@@ -11,9 +11,9 @@
         <% @places.each do |place| %>
         <div class='col-md-4'>
             <div class="featured-place-wrap">
-                <% place.photos.each do |photo|%>
-                    <%= image_tag photo.picture.url %>
-                <% end %><br/>
+                <% if place.photos.present? %>
+                    <%= image_tag place.photos.last.picture.url %>
+                <% end %>
                 <h4>
                     <%= link_to place.name, place_path(place) %>
                 </h4>
