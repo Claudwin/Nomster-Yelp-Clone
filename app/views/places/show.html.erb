@@ -139,17 +139,17 @@
                     <a href="#" class="" data-toggle="modal" data-target="#photoModal"><i class="fa fa-plus-circle"></i> Add Photo</a>
                    </div><br/>
                    <% @place.photos.in_groups_of(2, false).each do |group| %>
-                    <div class="row">
-                        <div class='col-md-4'>
+                        <div class="row">
                             <% @place.photos.each do |photo|%>
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                    <%= image_tag photo.picture.url, class: "img-thumbnail"  %>
-                                    <p class="card-text"><%= photo.caption %></p>
+                            <div class='col-md-4'>
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <%= image_tag photo.picture.url, class: "img-thumbnail"  %>
+                                        <p class="card-text"><%= photo.caption %></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <% end %>
-                        </div>    
+                            </div> 
+                        <% end %>
                     </div>
                 </div>   
                 <% end %> 
