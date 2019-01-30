@@ -10,8 +10,9 @@
                 <% @places.each do |place| %>
                     <div class='col-md-4'>
                         <div class="featured-place-wrap">
-                            <% if place.photos.present? %>
+                                <% if place.photos.present? %>
                                     <%= image_tag place.photos.last.picture.url %>
+                                <% end %>
                                 <h4><%= link_to place.name, place_path(place) %></h4>
                                 <% if place.comments.present? %>
                                         <span><%= place.comments.last.comment %></span>
@@ -42,8 +43,7 @@
                                 </div>
                                 <% if place.user.present? %>
                                 <small>Posted by: <%= place.user.email %></small>
-                                <% end %>
-                            <% end %>       
+                                <% end %> 
                         </div>
                     </div>
                 <% end %>
