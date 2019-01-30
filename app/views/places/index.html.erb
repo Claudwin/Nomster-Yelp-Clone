@@ -5,7 +5,6 @@
                         <h3>Featured Places</h3>
                     </div>
     <div class="container">
-        <% @places.in_groups_of(3, false).each do |group| %>
             <div class='row'>
                 <% @places.each do |place| %>
                     <div class='col-md-4'>
@@ -48,6 +47,5 @@
                     </div>
                 <% end %>
             </div>
-        <% end%>
     </div>
 </div>
